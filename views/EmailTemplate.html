@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+ th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+	padding: 15px;
+}
+table {
+    border-collapse:separate;
+    border:solid black 1px;
+    border-radius:6px;
+    -moz-border-radius61px;
+}
+</style>
+</head>
+<body>
+		<p ><b>NOC {Shift} Shift Report</b></p>
+        <p><b>NOC Engineer on Shift:<span style="color:#4B0082"> {NOC} </span></b>  </p>
+		<p><b> Date:  <span style="color:#4B0082"> {Date} </span></p>		</b>
+		<br></br>
+	<table>
+	<tr>
+         <th colspan="8" style="background-color:#228B22"><font size="5"><b>Resolved issues during shift:</b></font> </th>
+	</tr>
+			<tr>
+				<th> Key </th>
+				<th> Status </th>
+				<th> Priority </th>
+				<th> Summary </th>
+				<th> Created </th>
+				<th> Updated </th>
+				<th> Assignee</th>
+				<th> Solved By</th>
+			</tr>
+            {Resolved}
+		</table>
+		<br></br>
+		<table>
+        <th colspan="9"style="background-color: #B22222"> <font size="5"><b >Open\In Progress Issues:</b></font></th>
+			<tr>
+			<th> Key </th>
+			<th> Status </th>
+			<th> Priority </th>
+			<th> Summary </th>
+			<th> Created </th>
+			<th> Updated </th>
+			<th> DueDate </th>
+			<th> Assignee</th>
+			<th> Handeld During Shift</th>
+			</tr>
+			{OpenOrInProgress}
+		</table>
+		<br></br>
+		<table>
+          <th colspan="6" style="background-color:#FF7F50"><font size="5"><b>Events:</b></font></th>
+			<tr>
+				<th> Key </th>
+				<th> Status </th>
+				<th> Priority </th>
+				<th> Summary </th>
+				<th> Start Date </th>
+				<th> End Date </th>
+			</tr>
+            {Events}
+		</table>
+		<br></br>
+		<table>
+          <th colspan="1" style="background-color:#c81ae1"><font size="5"><b> Important Info:</b></font></th>
+            {ImportantInfo}
+	    </table>
+		<br></br>
+		<table>
+          <th colspan="5" style="background-color:#87CEFA"><font size="5"><b> KB updates:</b></font></th>
+			<tr>
+			<th> Created </th>
+			<th> Ticket </th>
+			<th> Subject </th>
+			<th> Description </th>
+			<th> Links </th>
+			</tr>
+            {KbUpdates}
+	    </table>
+		<br></br>
+		<p style="color:#4B0082	"><b>{NOC Engineer}</b></p>
+		<p style="color:#4B0082	">Noc Engineer</p>
+		<p>Office: 972 (0) 732435880</p>
+		<p>Mobile: 972 (0) 524-384-400</p>
+	   <img src="{Signature}" alt="Signature" >
+</body>
+</html>

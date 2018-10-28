@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>NOC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================
+        <link href="Index/css/freelancer.min.css" rel="stylesheet">
+
+-->
+	<link rel="stylesheet" type="text/css" href="ContactFrom/css/util.css">
+	<link rel="stylesheet" type="text/css" href="ContactFrom/css/main.css">
+
+<!--===============================================================================================-->
+</head>
+<body>  
+    <nav class="navbar navbar-expand-lg bg-secondary  fixed-top text-uppercase" id="mainNav">
+             <div class="container">
+                 <a class="navbar-brand js-scroll-trigger" href="/" id="message" >
+                     NOC Dashboard
+                 </a>
+           
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#shift">shift report</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#important">important updates</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#knowladge">knowladge base</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section id="shift">
+
+
+
+	<div class="container-contact100" >
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form"  action="/sendShiftReport" method="post">
+				<span class="contact100-form-title">
+					NOC Shift Report
+				</span>
+
+	
+                <div class="wrap-input100 input100-select">
+					<span class="label-input100"></span>
+					<div>
+                        <label>Select Engenieer</label>
+						<select multiple class="selection-2" name="name" required>
+				            {{{nocUsers}}}
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+				<div class="wrap-input100 input100-select">
+					<span class="label-input100"></span>
+					<div>
+						<select class="selection-2" name="shiftTime" required>
+                            <option value="" disabled selected>Select Shift Time</option>
+							<option>Morning</option>
+							<option>Evening</option>
+							<option>Night</option>
+						</select>
+					</div>
+					<span class="focus-input100"></span>
+				</div>
+                    
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+                </form>
+                </div>
+            </div>
+        </section>
+    
+        <section id="important">   
+        <div class="container-contact100">
+        <div class="wrap-contact100">
+ 				<span class="contact100-form-title">
+					Important Updates
+				</span>
+                    {{{importantUpdate}}}
+                       	<form id="ImportantInfo" class="contact100-form validate-form" method="post" action="/addImportantUpdate">
+
+
+				<div class="wrap-input100 validate-input" data-validate = "Message is required">
+					<span class="label-input100"></span>
+					<textarea class="input100" name="description" placeholder="Your important update To add..." required ></textarea>
+					<span class="focus-input100"></span>
+				</div>
+                <div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn" >
+							<span>
+								Add
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+                        </div>
+                </div>
+			</form>
+		</div>
+        </div>
+            
+        <section id="knowladge">   
+        <div class="container-contact100">
+            <div class="wrap-contact100">
+            	<form class="contact100-form validate-form"  method="post"  action="/addKB">
+				<span class="contact100-form-title">
+					knowledge base
+				</span>
+
+				<div class="wrap-input100 validate-input" data-validate="Ticket Number is required">
+					<span class="label-input100">Ticket Number</span>
+					<input class="input100" type="text" name="ticket" placeholder="" required>
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate="Subject is required">
+					<span class="label-input100">Subject</span>
+                    <textarea class="input100" type="text" name="subject" placeholder="" required > </textarea>
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate="Description is required">
+					<span class="label-input100">Description</span>
+					<input class="input100" type="text" name="description" placeholder="" required>
+					<span class="focus-input100"></span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate="Link is required">
+					<span class="label-input100">Link</span>
+					<input class="input100" type="text" name="link" placeholder="" required>
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Add
+								<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+        </div>
+         </div>
+
+        </section>
+            
+	<div id="dropDownSelect1"></div>
+
+<!--===============================================================================================-->
+	<script src="ContactFrom/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="ContactFrom/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="ContactFrom/vendor/bootstrap/js/popper.js"></script>
+	<script src="ContactFrom/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="ContactFrom/vendor/select2/select2.min.js"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="ContactFrom/vendor/daterangepicker/moment.min.js"></script>
+	<script src="ContactFrom/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vContactFrom/endor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="ContactFrom/js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+</body>
+</html>
